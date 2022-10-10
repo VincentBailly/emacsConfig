@@ -1,0 +1,1 @@
+alias ge git --git-dir ~/emacsConfig --work-tree ~/.emacs.d $*
