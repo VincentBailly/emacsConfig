@@ -1,5 +1,32 @@
 * Vincent's config file
 
+** Setup
+
+*** Prerequisites
+
+- git installed and exposed through the PATH environment variable.
+- on Windows use git-bash to execute bash commands.
+
+*** Cloning
+
+#+begin_src bash
+  pushd ~
+  mkdir emacsConfig
+  pushd emacsCenfig
+  git clone --bare <repo-url>
+  echo eshell/history > info/exclude
+  echo eshell/lastdir > info/exclude
+  echo init.el > info/exclude
+  echo server > info/exclude
+  popd
+  # optionally create a backup of existing config
+  # mv ~/.emacs.d ~/.emacs.d.bak
+  # mv ~/.emacs ~/.emacs.bak
+  mkdir .emacs.d
+  git --git-dir ~/emacsConfig --work-tree ~/.emacs.d checkout
+#+end_src
+
+
 #+BEGIN_SRC emacs-lisp :tangle init.el
 
   ;; start server
