@@ -6,18 +6,24 @@
 
 - git installed and exposed through the PATH environment variable.
 - on Windows use git-bash to execute bash commands.
+- emacs executable is exposed through the PATH environment variable.
 
 *** Cloning
 
+This setup is a bit unconventional but it allows to separate the
+source controle configuration from the content of the repo. This
+allows to have several repositories to saving different sets of files
+in a common folder (Eg, this is useful to add source control to the
+`~/.config` folder on linux)
+
 #+begin_src bash
   pushd ~
-  mkdir emacsConfig
-  pushd emacsCenfig
-  git clone --bare <repo-url>
-  echo eshell/history > info/exclude
-  echo eshell/lastdir > info/exclude
-  echo init.el > info/exclude
-  echo server > info/exclude
+  git clone --bare <repo-url> emacsConfig
+  pushd emacsConfig
+  echo eshell/history >> info/exclude
+  echo eshell/lastdir >> info/exclude
+  echo init.el >> info/exclude
+  echo server >> info/exclude
   popd
   # optionally create a backup of existing config
   # mv ~/.emacs.d ~/.emacs.d.bak
@@ -25,6 +31,15 @@
   mkdir .emacs.d
   git --git-dir ~/emacsConfig --work-tree ~/.emacs.d checkout
 #+end_src
+
+*** Initializing config file
+
+Open emacs and open the file  ~/.emacs.d/config.org
+Once emacs is open and the active buffer points to config.org.
+
+M-x org-babel-tangle
+
+Exit and re-open emacs. Emacs should now be initialized.
 
 
 #+BEGIN_SRC emacs-lisp :tangle init.el
