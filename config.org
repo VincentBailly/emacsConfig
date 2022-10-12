@@ -41,6 +41,7 @@ M-x org-babel-tangle
 
 Exit and re-open emacs. Emacs should now be initialized.
 
+** Config
 
 #+BEGIN_SRC emacs-lisp :tangle init.el
 
