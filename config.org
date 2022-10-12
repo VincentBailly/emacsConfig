@@ -100,6 +100,6 @@ Exit and re-open emacs. Emacs should now be initialized.
   (defun vibailly-config--push ()
     "Push latest changes"
     (interactive)
-    (shell-command (format "%s push" vibailly-config--command))
+    (shell-command (format "%s -c push.autoSetupRemot=true push" vibailly-config--command))
     (vibailly-config--refresh))
 #+END_SRC
