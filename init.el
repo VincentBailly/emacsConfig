@@ -15,3 +15,6 @@
 ;; part of the PATH env variable. The ls command used is the one provided by git-bash.
 (setq ls-lisp-use-insert-directory-program t)
 
+
+
+;; test
