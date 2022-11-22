@@ -121,4 +121,4 @@ Exit and re-open emacs. Emacs should now be initialized.
 
 *** Javascript mode
 
-(setq js-indent-level 2)
+(setq-default js-indent-level 2)
