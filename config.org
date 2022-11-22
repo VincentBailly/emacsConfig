@@ -119,3 +119,6 @@ Exit and re-open emacs. Emacs should now be initialized.
   (setq tsc-dyn-get-from '(:github))
 #+end_src
 
+*** Javascript mode
+
+(setq js-indent-level 2)
