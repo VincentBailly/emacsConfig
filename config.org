@@ -104,3 +104,18 @@ Exit and re-open emacs. Emacs should now be initialized.
     (shell-command (format "%s -c push.autoSetupRemote=true push" vibailly-config--command))
     (vibailly-config--refresh))
 #+END_SRC
+
+*** Melpa
+
+#+begin_src emacs-lisp :tangle init.el
+  (require 'package)
+  (add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+#+end_src
+
+*** Tree sitter
+
+#+begin_src emacs-lisp :tangle init.el
+  ;; configure tree-sitter to only download binaries from github and never try to compile them.
+  (setq tsc-dyn-get-from '(:github))
+#+end_src
+
