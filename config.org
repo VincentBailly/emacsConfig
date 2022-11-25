@@ -121,4 +121,21 @@ Exit and re-open emacs. Emacs should now be initialized.
 
 *** Javascript mode
 
+#+begin_src emacs-lisp :tangle init.el
 (setq-default js-indent-level 2)
+#+end_src
+
+
+*** Git integration
+
+#+begin_src emacs-lisp :tangle init.el
+(setenv "EDITOR" "'c:\\Program Files\\emacs-28.1\\bin\\emacsclientw.exe'")
+#+end_src
+
+*** Font
+
+On Windows the fixed pitched font is Courier New
+
+#+begin_src emacs-lisp :tangle init.el
+(face-spec-set 'fixed-pitch '((t :family "Courier New")))
+#+end_src
